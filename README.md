@@ -18,17 +18,18 @@ The project is structured like the follow:
 - Data: contains the raw data used as example in this project
 
 #### Setup backend
+Install Python 3.9  
 Install the needed python packages through _BE > requirements.txt_
 #### Setup frontend
 1. Install JS
-2. Install Vue
+2. Install Vue 3
 3. Run:
 ```
 $ cd FE
 $ npm install
 ```
 #### Optional: Setup .env file
-If you want to feed custom data to the application, you will need to generate a .env file.<br>
+If you want to run your own test instead of using the provided data, you will need to generate a .env file.<br>
 You can do so by following the steps bellow.
 1. Generate .env file by running:
 ```
@@ -51,18 +52,4 @@ $ open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ar
 ```
 
 ## Use cases
-- Lade eine vorhandene Konversation aus "/conversation_data_raw" um zu testen oder füge deine eigene hinzu.
-Du kannst eine Konversation für die Analyse selektieren, indem du den Pfad zum File unter im .env File angibst.
-
-## Testing
-
-## Used Technologies
-- Openai API
-- JavaScript, TypeScript
-- Vue
-- Google JS Charts
-- Python
-- SQLite
-
-## Licence
-TBD
+When opening the frontend application, you have the possibility of displaying the analysis performed by our engine for 2 patients. Click on the navbar "Patient A" or "Patient B" to see different patient's results.
