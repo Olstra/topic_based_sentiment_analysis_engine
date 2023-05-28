@@ -1,0 +1,99 @@
+Topic,Sentiment,Polarity
+"mist, vergessen zwar Salat aber ein Dchinkengipfeli dazu 😤",###,###
+salat,Negative,-0.5555534029006959
+ich schaffe es nicht!!!,###,###
+"🍚Ich fühle mich gut. Ich sehe, dass ich immer wieder Vorgaben nicht erfülle obwohl ich recht ausgiebig über dem Handy brüte. Aber meine Waage sagt, dassich abgenommen habe. Ich vergesse oft die Photos und wenn Bilder mache, ist Edi fertig mit Essen . o je. Darum bin ich trotzdem zufrieden!",###,###
+handy,Positive,0.31193326115608216
+waage,Positive,0.31193326115608216
+photo,Positive,0.31193326115608216
+bild,Positive,0.31193326115608216
+spahetri mot Tomatengemüsessauce,###,###
+tomatengemüsessauce,Neutral,-0.12230089008808136
+"13,5 Stunden, dann zwei
+ Manderinli",###,###
+manderinli,Neutral,0.0
+"feine Sprinfroles mot Gemüsereis in der Heilarena
+ schmerzen links in der Brust. Stress",###,###
+mot,Negative,-0.5031323850154876
+heilarena,Negative,-0.6031323850154877
+stress,Negative,-0.5031323850154876
+"Fühlen ,wie vom Taxi überrollt..mit Halsweh.Erst vor10 min aus dem Bett gekommen muss in 20 min schon los alles in Kurzfassung Frühstuck zwei Stück Zopf u Kaffee Banane u sandwich kommen mit fur 11 uhr pause..Mittagessen Banane u Sandwitch.15.30 Feierabendbad mit Snack
+ Zum Abendessen Überbackener Fisch mit Kartoffeln u Salat..
+ Morgen freier Tag...Feuer susbtennen lassen u ab in die Heia",###,###
+bett,Neutral,0.13999999999999999
+uhr,Neutral,0.13999999999999999
+snack,Neutral,0.13999999999999999
+fisch,Neutral,0.13999999999999999
+kartoffel,Neutral,0.13999999999999999
+susbtenne,Neutral,0.13999999999999999
+xxxx,###,###
+Sardinen aus der Bretagne - j'adore❤️,###,###
+sardin,Neutral,0.0
+heute gibts keine Schoggi😂,###,###
+schoggi,Neutral,-0.027328974008560186
+Erst am Freitag gibts zum Wochenabschluss einen feinen Weisswein👍😊,###,###
+weisswein,Positive,0.8062020599842072
+"yes, die 8 kilo sind geschafft😊😊😊
+
+ und das ausgefallene training vom mittwoch wird heute nachgeholt...",###,###
+kilo,Positive,0.42685320675373073
+training,Positive,0.42685320675373073
+"Da ich sowieso bis Ostern auf Süsses verzichte, ist die Hürde im Moment nicht sehr gross.",###,###
+hürde,Neutral,-0.019766989946365332
+moment,Neutral,-0.06976698994636533
+Nüsslisalat,###,###
+"Freitag: Markttag! Es ist zwar noch bitterkalt, aber die Sonne scheint und die Tulpen lachen mich an. Ich lasse mir einen Strauss binden und kaufe zwei weitere zum Verschenken.
+ Um halb zehn geniesse ich einen Espresso mit Gipfeli. Zum Zmittag geht's zu den Eltern in den Meierhof (Salatbowl, Lachsforelle mit Randenrisotto, ein Glas Wein). Nach dem Besuch beim Homöopathen trinke ich einen Indian Chai im Restaurant (Znacht: Brot, Käse, Oliven).",###,###
+freitag,Neutral,0.16701117634773255
+sonne,Neutral,0.017011176347732554
+meierhof,Neutral,0.017011176347732554
+besuch,Neutral,0.017011176347732554
+brot,Neutral,0.017011176347732554
+"Es ist mir tatsächlich erst nach der Konsultation mit der Ärztin bewusst geworden, dass der Käse auf meinem Speiseplan das Problem sein könnte. Da war das Mittagessen bereits vorbei.",###,###
+ärztin,Negative,-0.38128843903541565
+käse,Negative,-0.3312884390354156
+problem,Negative,-0.3312884390354156
+"Ich fühlte mich eher schwerfällig, als ich aufstand und musste mich ziemlich überwinden, ins Training zu fahren. Jetzt bin ich aber ganz zufrieden.",###,###
+"Morgens Erstkonsultation mit Frau Dr. Schönfeld und Interwiew mit Frau Hannich, beides👍.Freue mich auf die Umsetzung der geplanten Massnahmen. Ab sofort trinke ich den Kaffee wieder schwarz☕️.",###,###
+erstkonsultation,Positive,0.6364276611804962
+frau,Positive,0.6364276611804962
+frau,Positive,0.6364276611804962
+umsetzung,Positive,0.6364276611804962
+kaffee,Positive,0.6364276611804962
+habe gerade sehr viel Energie und fühle mich nicht so träge wie auch schon 👍🏻,###,###
+energie,Positive,0.6434203386306763
+"- sehr starke Knieschmerzen in der Nacht
+ - Vormittag: Aussenweihnachtsdeko abräumen
+ - Nach Praxiskonsultation: Haushalten, Geige üben
+ - Abend: Orgel üben, Fernsehen
+ - F: Königskuchen, heisse Schokolade
+ - M: Königskuchen, Espresso
+ - A: Salat",###,###
+praxiskonsultation,Neutral,-0.12618210077285766
+es ist ein sch...Tag und riesen Stress.,###,###
+schtag,Negative,-0.6622262716293335
+feines nachtessen,###,###
+nachtessen,Positive,0.7062185287475586
+die Zwischenmahlzeit bestand aus einem 🍎,###,###
+zwischenmahlzeit,Neutral,0.0
+intervallfasten durchgführt 👍🏼,###,###
+intervallfast,Positive,0.6937664234638214
+bin krank im Bett,###,###
+bett,Negative,-0.7294302463531495
+grrrrr,###,###
+grrrrr,Negative,-0.5232409298419952
+"zu viel Stress
+04:30 Tagwache 19:15 woeder Zuhause
+musste am Abend etwas selber kochen um abzuschalten",###,###
+stress,Negative,-0.5619502186775207
+"müde.
+schlecht geschlafen.
+30 min kot Hund",###,###
+kot,Negative,-0.8826819062232971
+hund,Negative,-0.8826819062232971
+"13,5 Stunden, dann zwei
+Manderinli",###,###
+manderinli,Neutral,0.0
+"Suche nach der neuen Wölfin im Tierpark👍😀
+19000 Schritte 🎉",###,###
+tierpark,Neutral,-0.013882863521575917

@@ -31,5 +31,5 @@ def populate_db(patient_id=None) -> None:
 
 
 if __name__ == '__main__':
-    example_patient_id = 91
+    example_patient_id = 90
     populate_db()

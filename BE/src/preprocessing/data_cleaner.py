@@ -38,5 +38,5 @@ def clean_sentence(sentence: str) -> str:
 
 
 if __name__ == '__main__':
-    example_sentence = "nur 80% 1 Mandelgipfel\n\t 1 Würfelzucker\n\t1 Vieille Prune"
+    example_sentence = "Suche nach der neuen Wölfin im Tierpark👍😀 19000 Schritte 🎉"
     print(clean_sentence(example_sentence))

@@ -21,8 +21,7 @@ def get_config_info():
         'chatgpt-api-key': os.getenv('CHAT_GPT_API_KEY'),
         'deepl-api-key': os.getenv('DEEPL_API_KEY'),
         'raw-data-path': os.getenv('RAW_DATA_PATH'),
-        'db-location': os.getenv('DB_LOCATION'),
-        'bertopic-location': os.getenv('BERTOPIC_FOLDER')
+        'db-location': os.getenv('DB_LOCATION')
     }
 
 
@@ -51,7 +50,6 @@ class Config:
         self.deepl_api_key = str(data['deepl-api-key'])
         self.raw_data_path = os.path.join(os.getcwd(), str(data['raw-data-path']))
         self.db_location = os.path.join(os.getcwd(), str(data['db-location']))
-        self.bertopic_location = os.path.join(os.getcwd(), str(data['bertopic-location']))
 
     def reload(self):
         """

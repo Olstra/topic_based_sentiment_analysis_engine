@@ -13,9 +13,6 @@ path = config_instance.raw_data_path
 data = parse_file_lines(path)
 data = [entry.text_entry for entry in data]
 
-# preprocess
-data = clean_sentences(data)
-
 
 def write_results_to_file(output_filename: str, input_data: list[str], model_name="tbsa") -> None:
     """
@@ -53,7 +50,7 @@ def write_results_to_file(output_filename: str, input_data: list[str], model_nam
 
 
 folder_path = "Data/evaluation/results"
-test_nr = "05"
+test_nr = "06"
 
 # # get engine's topic based sentiment detection's results
 # filename = f"{folder_path}/{test_nr}-eval_results-TBSA.csv"
@@ -63,9 +60,9 @@ test_nr = "05"
 # filename = f"{folder_path}/{test_nr}-eval_results-ABSA.csv"
 # write_results_to_file(filename, data, "absa")
 
-# # get hugging face's ABSA results (multilingual)
-# filename = f"{folder_path}/{test_nr}-eval_results-huggingface_multi.csv"
-# write_results_to_file(filename, data, "huggingface_multi")
+# get hugging face's ABSA results (multilingual)
+filename = f"{folder_path}/{test_nr}-eval_results-huggingface_multi.csv"
+write_results_to_file(filename, data, "huggingface_multi")
 
 # get hugging face's ABSA results (English)
 filename = f"{folder_path}/{test_nr}-eval_results-huggingface_en.csv"

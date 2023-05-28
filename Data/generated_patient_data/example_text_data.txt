@@ -1,8 +1,0 @@
-Patient: I'm feeling really motivated today!
-Chatbot: That's great to hear. What's been helping you stay motivated?
-Patient: Well, I've been sticking to my diet plan and going for daily walks.
-Chatbot: Excellent! Keep up the good work.
-Patient: I'm feeling really discouraged today. I don't think I can keep up with the diet plan anymore.
-Chatbot: I understand that it can be difficult at times, but remember why you started this journey. You can do this.
-Patient: You're right. I'll try to stay positive and keep going.
-Chatbot: That's the spirit! Remember that you're not alone in this, and we're here to support you.

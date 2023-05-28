@@ -15,9 +15,11 @@ while True:
         break
     os.chdir('..')
 
-eval_results_path = "Data/evaluation/results/05-eval_results-huggingface_multi.csv"
+eval_results_path = "Data/evaluation/results/eval_results-huggingface_multi.csv"
 
-eval_solution_path = "Data/evaluation/04-eval_results-SOLUTION.csv"
+eval_solution_path = "Data/evaluation/eval_results-SOLUTION.csv"
+
+all_correct_topics = []
 
 
 def parse_results(filename: str) -> dict[str, list[AvgTopicSentimentDTO]]:
@@ -65,25 +67,28 @@ def calculate_f1(precision: float, recall: float) -> float:
     return 2 * ((precision * recall) / (precision + recall))
 
 
-actual_results = parse_results(eval_results_path)
+actual = parse_results(eval_results_path)
 
 expected = parse_results(eval_solution_path)
 
 total_topics = 0
+
+total_sentiments = 0
+
+total_tp_topics = []
+
 confusion_matrix_topics = {"TP": 0, "TN": 0, "FP": 0, "FN": 0}
+
 confusion_matrix_sentiments = {"TP": 0, "TN": 0, "FP": 0, "FN": 0}
-true_positives = []
 
 # calculate confusion matrix values
 for key, expected_vals in expected.items():
 
-    result_vals = actual_results[key]
+    result_vals = actual[key]
 
-    # TODO remove lemmatizing here after getting test results nr 6
-    result_topics = [lemmatize_sentence(r.topic.strip()) for r in result_vals]
+    result_topics = [r.topic.strip() for r in result_vals]
 
-    # lemmatize human annotated results
-    expected_topics = [lemmatize_sentence(r.topic.strip()) for r in expected_vals]
+    expected_topics = [r.topic.strip() for r in expected_vals]
 
     tp_topics = []
 
@@ -92,7 +97,8 @@ for key, expected_vals in expected.items():
         total_topics += 1
         if e in result_topics:
             confusion_matrix_topics["TP"] += 1
-            true_positives.append(e)
+            tp_topics.append(e)
+            total_tp_topics.append(e)
         else:
             confusion_matrix_topics["FN"] += 1
 
@@ -101,38 +107,54 @@ for key, expected_vals in expected.items():
         if result not in expected_topics:
             confusion_matrix_topics["FP"] += 1
 
-    # calculate sentiments
+    # gather topics we want to use for sentiment analysis metrics
+    for e in expected_vals:
+        if e.overall_sentiment == "Neutral" and e.topic in tp_topics:
+            tp_topics.remove(e.topic)
 
-print("Confusion Matrix Topic Detection")
-print(f"Total topics to be found: {total_topics}")
+    total_sentiments += len(tp_topics)
+
+    # calculate sentiment  confusion matrix
+    for e in result_vals:
+        if e.topic in tp_topics:
+            expected_dto = next((x for x in expected_vals if x.topic == e.topic), None)
+            if e.overall_sentiment == "Positive" and expected_dto.overall_sentiment == "Positive":
+                confusion_matrix_sentiments["TP"] += 1
+            elif e.overall_sentiment == "Negative" and expected_dto.overall_sentiment == "Negative":
+                confusion_matrix_sentiments["TN"] += 1
+            elif expected_dto.overall_sentiment == "Negative" and (e.overall_sentiment == "Positive" or e.overall_sentiment == "Neutral"):
+                confusion_matrix_sentiments["FP"] += 1
+            elif expected_dto.overall_sentiment == "Positive" and (e.overall_sentiment == "Negative" or e.overall_sentiment == "Neutral"):
+                confusion_matrix_sentiments["FN"] += 1
+
+print("\n### Confusion Matrix Topic Detection ###".upper())
+print(f"\nTotal topics to be found: {total_topics}")
 for key, val in confusion_matrix_topics.items():
     print(f"{key}:\t{val}")
 
 # calculate topic detection metrics
-topic_detection_accuracy = calculate_accuracy(confusion_matrix_topics["TP"], confusion_matrix_topics["TN"], confusion_matrix_topics["FP"], confusion_matrix_topics["FN"])
 topic_detection_precision = calculate_precision(confusion_matrix_topics["TP"], confusion_matrix_topics["FP"])
 topic_detection_recall = calculate_recall(confusion_matrix_topics["TP"], confusion_matrix_topics["FN"])
 topics_detection_f1 = calculate_f1(topic_detection_precision, topic_detection_recall)
 
-print(f"Accurcay:\t{topic_detection_accuracy}"
-      f"\nPrecision:\t{topic_detection_precision}"
-      f"\nRecall:\t\t{topic_detection_recall}"
-      f"\nF1:\t\t{topics_detection_f1}")
+print(f"\nPrecision:\t{topic_detection_precision}")
+print(f"Recall:\t\t{topic_detection_recall}")
+print(f"F1:\t\t\t{topics_detection_f1}")
 
-print("Confusion Matrix Sentiment Analysis")
-print(f"Total sentiments to be found: {0}")  # todo add total sents
+print("\n### Confusion Matrix Sentiment Analysis ###".upper())
+print(f"Total sentiments to be found: {total_sentiments}")
 for key, val in confusion_matrix_sentiments.items():
     print(f"{key}:\t{val}")
 
-# # calculate sentiment analysis metrics
-# sentiment_detection_accuracy = calculate_accuracy(confusion_matrix_sentiments["TP"], confusion_matrix_sentiments["TN"], confusion_matrix_sentiments["FP"], confusion_matrix_sentiments["FN"])
-# sentiment_detection_precision = calculate_precision(confusion_matrix_sentiments["TP"], confusion_matrix_sentiments["FP"])
-# sentiment_detection_recall = calculate_recall(confusion_matrix_sentiments["TP"], confusion_matrix_sentiments["FN"])
-# sentiments_detection_f1 = calculate_f1(sentiment_detection_precision, sentiment_detection_recall)
+# calculate sentiment analysis metrics
+sentiment_detection_accuracy = calculate_accuracy(confusion_matrix_sentiments["TP"], confusion_matrix_sentiments["TN"], confusion_matrix_sentiments["FP"], confusion_matrix_sentiments["FN"])
+sentiment_detection_precision = calculate_precision(confusion_matrix_sentiments["TP"], confusion_matrix_sentiments["FP"])
+sentiment_detection_recall = calculate_recall(confusion_matrix_sentiments["TP"], confusion_matrix_sentiments["FN"])
+sentiments_detection_f1 = calculate_f1(sentiment_detection_precision, sentiment_detection_recall)
 
-print(f"True positives: {true_positives}")
+#  print(f"True positives topics: {total_tp_topics}")
 
-# print(f"Accurcay:\t{sentiment_detection_accuracy}"
-#       f"Precision:\t{sentiment_detection_precision}"
-#       f"Recall:\t{sentiment_detection_recall}"
-#       f"F1:\t{sentiments_detection_f1}")
+print(f"Accurcay:\t{sentiment_detection_accuracy}")
+print(f"Precision:\t{sentiment_detection_precision}")
+print(f"Recall:\t\t{sentiment_detection_recall}")
+print(f"F1:\t\t\t{sentiments_detection_f1}")
