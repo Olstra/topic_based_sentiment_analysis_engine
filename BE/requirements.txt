@@ -1,0 +1,13 @@
+bertopic==0.14.1
+deepl==1.14.0
+emoji==2.2.0
+Flask==2.3.2
+nltk==3.8.1
+python-dotenv==1.0.0
+requests==2.30.0
+scipy==1.10.1
+spacy==3.5.2
+spellchecker==0.4
+textblob_de==0.4.3
+transformers==4.28.1
+wordcloud==1.9.1.1

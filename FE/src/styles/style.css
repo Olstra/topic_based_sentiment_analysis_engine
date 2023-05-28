@@ -1,0 +1,44 @@
+/* Set box-sizing property for all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+h1, h2, h3 {
+    padding-left: 5%;
+    padding-right: 5%;
+  /* Add space between text elements */
+  margin-bottom: 20px;
+}
+p {
+    padding-left: 5%;
+    padding-right: 25%;
+    width: 80%;
+}
+/* Set default font and margin */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+/* Center text horizontally and vertically */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Set maximum width and add padding to container */
+.content {
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+/* Set media query for small screens */
+@media only screen and (max-width: 600px) {
+  .content {
+    max-width: 100%;
+  }
+}
+
+
+

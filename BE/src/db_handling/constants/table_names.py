@@ -1,0 +1,6 @@
+PATIENTS = "patients"
+JOURNAL_ENTRIES = "journal_entries"
+SUMMARIES = "summaries"
+MOTIVATION_SCORES = "motivation_scores"
+VALENCE = "legacy_wordcloud"
+TOPIC_SENTIMENTS = "topic_sentiments"
